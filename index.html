@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book</title>
+    <style>
+        .Container{
+            border: 2px solid rgb(3, 27, 40);
+            border-radius: 10px 15px 10px 15px;
+            height: 400px;
+            width: 350px;
+            margin-left: 600px;
+            margin-top: 70px;
+            background-color: rgb(189, 211, 239);   
+        }
+        h1{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #search{
+            margin-left: 40px;
+            padding: 5px;
+            padding-right: 40px;
+        }
+        #output{
+            text-align: center;
+            margin-top: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #btn{
+            background-color: rgb(8, 35, 49);
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <h1>Contact Book..</h1>
+        <input type="text" id="search" placeholder="Search....">
+        <button type="button" onclick="search()" id="btn">Search</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        const contacts = {
+            nikita: "9356558803",
+            kartiki: "9123456782",
+            namu: "9564780923",
+            riya: "8080403221",
+            ananya: "9191445683",
+        }
+        function search(){
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+            const mobile = contacts[query]
+            
+            const result = document.getElementById("output");
+            
+            if(mobile){
+                output.innerText = ` The Mobile number of ${query} is ${mobile}`;
+            }
+            else{
+                output.innerText = "This contact is Not Found";
+            }
+        }
+    </script>
+</body>
+</html>
